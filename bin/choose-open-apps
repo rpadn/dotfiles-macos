@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+window_id=$(aerospace list-windows --all --format '%{app-name}%{right-padding} | %{window-title}%{right-padding} |%{tab}%{window-id}' | \
+    choose | \
+    cut -d '|' -f 3 | \
+    sed 's/\t//g'
+)
+
+# Need a sleep as I believe, when "choose" closes, aerospace tries to focus on 
+# the last workspace with focus - i.e. the one where the script was launched
+# from.
+# The effect is a quick focus on the selected workspace, and then immediately
+# going back to the previous workspace.
+#
+# Probably related to this: https://github.com/nikitabobko/AeroSpace/discussions/1371
+sleep 0.1 | \
+    aerospace focus --window-id "$window_id"
