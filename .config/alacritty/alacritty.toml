@@ -1,0 +1,56 @@
+[font]
+size = 13.0
+
+[font.normal]
+family = "FiraCode Nerd Font Mono Light"
+
+[selection]
+save_to_clipboard = true
+
+# papercolor
+[colors.primary]
+background = "#1c1c1c"
+foreground = "#d0d0d0"
+
+[colors.cursor]
+text       = "#1c1c1c"
+cursor     = "#d0d0d0"
+
+[colors.normal]
+black      = "#1c1c1c"
+red        = "#a24176"
+green      = "#7fba39"
+yellow     = "#d7af5f"
+blue       = "#69bbe4"
+magenta    = "#808080"
+cyan       = "#d7875f"
+white      = "#d0d0d0"
+
+[colors.bright]
+black      = "#585858"
+red        = "#5faf5f"
+green      = "#afd700"
+yellow     = "#af87d7"
+blue       = "#ffaf00"
+magenta    = "#ff5faf"
+cyan       = "#00afaf"
+white      = "#5f8787"
+
+[window]
+decorations = "Buttonless"
+dynamic_title = true
+
+[keyboard]
+bindings = [
+    { key = "N", mods = "Command", action = "None" },
+    { key = "T", mods = "Command", action = "None" },
+    { key = "M", mods = "Command", action = "ReceiveChar" },
+    { key = "Q", mods = "Command", action = "ReceiveChar" },
+    { key = "W", mods = "Command", action = "ReceiveChar" },
+]
+
+[terminal.shell]
+program = "/bin/zsh"
+args = [
+  "--login"
+]
