@@ -8,11 +8,12 @@ return {
 
     config = function()
         -- fugitive
+        vim.keymap.set("n", "<leader>gg", ":Git ")
         vim.keymap.set("n", "<leader>gs", ":Git <CR>")
         vim.keymap.set("n", "<leader>gb", ":Git blame<CR>")
         vim.keymap.set("n", "<leader>gp", ":Git push<CR>")
         vim.keymap.set("n", "<leader>gL", ":Git pull --rebase<CR>")
-        vim.keymap.set("n", "<leader>gl", ":Git log --pretty=format='%h %s <%an>'<CR>")
+        vim.keymap.set("n", "<leader>gl", ":Git log --pretty=format:'%h %s <%an> (%ar)'<CR>")
 
         -- flog
         vim.keymap.set("n", "<leader>gf", ":Flogsplit<CR>")
