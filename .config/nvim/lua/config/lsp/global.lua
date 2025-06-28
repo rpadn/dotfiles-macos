@@ -15,10 +15,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "<leader>da", function()
             vim.diagnostic.setqflist()
         end, opts)
-        vim.keymap.set("n", "[n", function()
+        vim.keymap.set("n", "]n", function()
             vim.diagnostic.goto_next()
         end, opts)
-        vim.keymap.set("n", "]n", function()
+        vim.keymap.set("n", "[n", function()
             vim.diagnostic.goto_prev()
         end, opts)
 
