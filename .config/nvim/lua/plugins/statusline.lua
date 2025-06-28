@@ -41,6 +41,12 @@ return {
             options = {
                 theme = custom_papercolor,
             },
+            sections = {
+                -- remove git branch & diff status
+                lualine_b = { "diagnostics" },
+                -- show relative
+                lualine_c = { { "filename", path = 1 } },
+            },
         })
     end
 }
