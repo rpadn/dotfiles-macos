@@ -42,3 +42,5 @@ vim.diagnostic.config({
         prefix = "",
     }
 })
+
+-- vim.lsp.set_log_level 'debug'

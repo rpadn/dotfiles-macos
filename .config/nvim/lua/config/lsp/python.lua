@@ -10,9 +10,10 @@ vim.lsp.config("pylsp", {
                 pyflakes = { enabled = false },
                 pycodestyle = { enabled = false },
                 --
-                pylsp_mypy = { 
+                pylsp_mypy = {
                     enabled = true,
-                    strict = true
+                    strict = true,
+                    report_progress = true,
                 },
                 jedi = {
                     environment = ".venv/",
