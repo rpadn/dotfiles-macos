@@ -136,7 +136,7 @@ alias tml='tmux list-sessions'
 alias tmksv='tmux kill-server'
 alias tmkss='tmux kill-session -t'
 
-alias config='/usr/bin/git --git-dir=/home/rpadn/.cfg/ --work-tree=/home/rpadn'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # git override
 alias gap='git add -p'
