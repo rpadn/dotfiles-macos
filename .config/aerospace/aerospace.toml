@@ -10,8 +10,8 @@ after-startup-command = [
 # But the feature is very helpful.
 # Normalizations eliminate all sorts of weird tree configurations that don't make sense.
 # Give normalizations a chance and enable them back.
-enable-normalization-flatten-containers = false
-enable-normalization-opposite-orientation-for-nested-containers = false
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
 
 on-focus-changed = ['move-mouse window-lazy-center']
 # Mouse follows focus when focused monitor changes
@@ -42,11 +42,6 @@ inner.vertical =   10
     alt-shift-j = 'move down'
     alt-shift-k = 'move up'
     alt-shift-l = 'move right'
-
-    # Consider using 'join-with' command as a 'split' replacement if you want to enable
-    # normalizations
-    # alt-h = 'split horizontal'
-    alt-v = 'split vertical'
 
     alt-f = 'fullscreen'
 
@@ -92,6 +87,7 @@ inner.vertical =   10
     alt-x = 'move-node-to-monitor next --focus-follows-window --wrap-around'
 
     alt-r = 'mode resize'
+    alt-shift-comma = 'mode service'
 
     alt-f1 = 'focus-monitor left'
     alt-f2 = 'focus-monitor right'
@@ -104,8 +100,20 @@ inner.vertical =   10
     j = 'resize height +50'
     k = 'resize height -50'
     l = 'resize width +50'
+    down = 'resize smart -50'
+    up = 'resize smart +50'
     enter = 'mode main'
     esc = 'mode main'
+
+[mode.service.binding]
+    esc = ['reload-config', 'mode main']
+    r = ['flatten-workspace-tree', 'mode main'] # reset layout
+
+    alt-shift-h = ['join-with left', 'mode main']
+    alt-shift-j = ['join-with down', 'mode main']
+    alt-shift-k = ['join-with up', 'mode main']
+    alt-shift-l = ['join-with right', 'mode main']
+
 
 [workspace-to-monitor-force-assignment]
     1 = 'main'
