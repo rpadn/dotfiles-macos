@@ -9,8 +9,8 @@ export PATH=/opt/homebrew/bin:$HOME/.ghcup/bin:$HOME/.cabal/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-fpath+=$HOME/.zsh/pure
 # Pure theme
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
 PURE_PROMPT_SYMBOL='»'
 autoload -U promptinit; promptinit
 prompt pure
