@@ -10,7 +10,3 @@ require("config.lsp.lua")
 
 -- TODO: plugins
 -- vim-repl (or something better)
--- codecompanion
-
--- TODO: settings
--- local project config? (i.e. .vimlocal)
