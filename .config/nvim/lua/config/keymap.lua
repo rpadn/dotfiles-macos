@@ -58,8 +58,11 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", "\"_dP")
 
 -- diff files in current windows
-vim.keymap.set("n", "<leader>df :windo", "diffthis<CR>")
+vim.keymap.set("n", "<leader>df", ":windo diffthis<CR>")
 vim.keymap.set("n", "<leader>dc", ":diffoff!<CR>")
 -- receive / send visual selection
 vim.keymap.set("v", "<leader>dg", ":diffget<CR>")
 vim.keymap.set("v", "<leader>dp", ":diffput<CR>")
+
+-- terminal mode
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")

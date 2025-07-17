@@ -4,6 +4,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
         vim.keymap.set("i", "<C-Space>", "<C-x><C-o>", opts)
         vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+        vim.keymap.set("n", "gD", function()
+            vim.cmd.vsplit()
+            vim.lsp.buf.definition()
+        end, opts)
         vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
         vim.keymap.set("n", "<leader>ac", function() vim.lsp.buf.code_action() end, opts)
         vim.keymap.set("n", "<leader>fr", function() vim.lsp.buf.references() end, opts)
@@ -25,7 +29,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         -- format on save
         vim.api.nvim_create_autocmd("BufWritePre", {
             callback = function()
-                vim.lsp.buf.format({ async = false, id = event.data.client_id })
+                vim.lsp.buf.format({ async = true })
             end,
         })
     end,
