@@ -15,6 +15,12 @@ return {
             "MeanderingProgrammer/render-markdown.nvim", -- Make Markdown buffers look beautiful
             ft = { "markdown", "codecompanion" },
         },
+        {
+            "Davidyz/VectorCode", -- Index and search code in your repositories
+            version = "*",
+            dependencies = { "nvim-lua/plenary.nvim" },
+            build = "uv tool upgrade vectorcode", -- This helps keeping the CLI up-to-date
+        },
     },
     opts = {
         extensions = {
@@ -38,6 +44,11 @@ return {
                     make_vars = true,
                     make_slash_commands = true,
                     show_result_in_chat = true,
+                },
+            },
+            vectorcode = {
+                opts = {
+                    add_tool = true,
                 },
             },
         },
@@ -76,25 +87,25 @@ return {
         {
             "<leader>la",
             "<cmd>CodeCompanionActions<CR>",
-            desc = "Open the action palette",
+            desc = "CodeCompanion - Open the action palette",
             mode = { "n", "v" },
         },
         {
             "<leader>lo",
             "<cmd>CodeCompanionChat Toggle<CR>",
-            desc = "Toggle a chat buffer",
+            desc = "CodeCompanion - Toggle a chat buffer",
             mode = { "n", "v" },
         },
         {
             "<leader>lA",
             "<cmd>CodeCompanionChat Add<CR>",
-            desc = "Add code to a chat buffer",
+            desc = "CodeCompanion - Add code to a chat buffer",
             mode = { "v" },
         },
         {
             "<leader>li",
             ":CodeCompanion ",
-            desc = "Inline chat",
+            desc = "CodeCompanion - Inline chat",
             mode = { "n", "v" },
         },
     },
