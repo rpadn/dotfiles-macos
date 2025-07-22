@@ -6,17 +6,6 @@ return {
             "nvim-telescope/telescope-fzf-native.nvim", build = "make"
         },
     },
-    require("telescope").setup({
-        pickers = {
-            buffers = {
-                mappings = {
-                    i = {
-                        ["<C-d>"] = "delete_buffer",
-                    }
-                }
-            }
-        }
-    }),
     config = function()
         require("telescope").load_extension("fzf")
 
@@ -38,5 +27,25 @@ return {
         vim.keymap.set('n', '<leader>sb', builtin.current_buffer_fuzzy_find, {})
         -- lsp
         vim.keymap.set('n', '<leader>so', builtin.lsp_document_symbols, {})
+
+        local actions = require('telescope.actions')
+        require("telescope").setup({
+            defaults = {
+                mappings = {
+                    i = {
+                        ["<C-S-q>"] = actions.send_selected_to_qflist + actions.open_qflist
+                    }
+                },
+            },
+            pickers = {
+                buffers = {
+                    mappings = {
+                        i = {
+                            ["<C-d>"] = actions.delete_buffer
+                        }
+                    }
+                }
+            }
+        })
     end
 }
