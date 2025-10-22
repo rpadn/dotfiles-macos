@@ -7,6 +7,3 @@ require("config.lsp.python")
 require("config.lsp.go")
 require("config.lsp.haskell")
 require("config.lsp.lua")
-
--- TODO: plugins
--- vim-repl (or something better)

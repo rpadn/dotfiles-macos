@@ -17,14 +17,14 @@ vim.keymap.set("n", "<leader>c", ":bd<CR>")
 vim.keymap.set("n", "<leader>C", ":bd!<CR>")
 -- TODO: review need for Buffers plugin
 -- close all buffers but current
-vim.keymap.set("n", "<leader>bo :Bdelete", "other<CR>")
-
--- close all hidden buffers
-vim.keymap.set("n", "<leader>bh :Bdelete", "hidden<CR>")
--- close all buffers
-vim.keymap.set("n", "<leader>ba :Bdelete", "all<CR>")
--- close buffers selectively
-vim.keymap.set("n", "<leader>bs :Bdelete", "select<CR>")
+-- vim.keymap.set("n", "<leader>bo :Bdelete", "other<CR>")
+--
+-- -- close all hidden buffers
+-- vim.keymap.set("n", "<leader>bh :Bdelete", "hidden<CR>")
+-- -- close all buffers
+-- vim.keymap.set("n", "<leader>ba :Bdelete", "all<CR>")
+-- -- close buffers selectively
+-- vim.keymap.set("n", "<leader>bs :Bdelete", "select<CR>")
 
 -- quick save
 vim.keymap.set("n", "<leader>w", ":w<CR>")
